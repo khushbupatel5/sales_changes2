@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="inherit_order_line_form" model="ir.ui.view">
+        <field name="name">inherit.order.line.form</field>
+        <field name="model">sale.order.line</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='order_lines']//form" position="inside">
+                <form>
+                    <field name="display_type" invisible="1"/>
+
+                    <group>
+                        <group invisible="display_type">
+                            <field name='create_po' invisible="1"/>
+                        </group>
+                    </group>
+                </form>
+            </xpath>
+        </field>
+    </record>
+</odoo>
